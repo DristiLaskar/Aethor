@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-blue: #00f3ff;
+  --neon-purple: #bc13fe;
+  --bg-dark: #050505;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: #e0e0e0;
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden;
+}
+
+/* The Glowing Orb Animation */
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 20px var(--neon-blue); transform: scale(1); }
+  50% { box-shadow: 0 0 40px var(--neon-purple); transform: scale(1.05); }
+  100% { box-shadow: 0 0 20px var(--neon-blue); transform: scale(1); }
+}
+
+.orb {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #4a4a4a, #000);
+  border: 2px solid var(--neon-blue);
+  animation: pulse-glow 3s infinite ease-in-out;
+}
+
+.orb.speaking {
+  border-color: var(--neon-purple);
+  animation-duration: 0.5s; /* Fast pulse when talking */
+}
+
+/* Chat Message Animation */
+.message-enter {
+  animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

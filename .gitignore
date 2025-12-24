@@ -1,0 +1,20 @@
+# --- SECURITY (Do NOT upload these) ---
+.env
+project_aether/.env
+.DS_Store
+
+# --- Python Backend Junk ---
+project_aether/venv/
+project_aether/__pycache__/
+project_aether/aether_memory/
+*.py[cod]
+
+# --- Frontend Junk (Heavy files) ---
+aether-frontend/node_modules/
+aether-frontend/.next/
+aether-frontend/out/
+aether-frontend/build/
+aether-frontend/.turbopack/
+
+# --- System Junk ---
+Thumbs.db
